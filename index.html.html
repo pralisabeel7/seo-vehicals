@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Shop SEO & Marketing Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --secondary: #1e40af;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --dark: #1e293b;
+            --gray: #64748b;
+            --success: #10b981;
+            --youtube: #ff0000;
+            --facebook: #1877f2;
+            --instagram: #e4405f;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            color: #334155;
+            background-color: #f1f5f9;
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--dark) 0%, #0f172a 100%);
+            color: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .header h1 i {
+            color: var(--accent);
+        }
+
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Section Styling */
+        .section {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid var(--primary);
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            color: var(--dark);
+            font-size: 1.8rem;
+        }
+
+        .section-title i {
+            color: var(--primary);
+            background-color: #e0f2fe;
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
+
+        .tool-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tool-card p {
+            color: var(--gray);
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .tool-link {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .tool-link:hover {
+            background-color: var(--secondary);
+        }
+
+        /* Keywords Section */
+        .keywords-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .keyword-pill {
+            background-color: #e0f2fe;
+            color: var(--dark);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            font-size: 0.95rem;
+        }
+
+        .keyword-pill:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .keyword-pill.copied {
+            background-color: var(--success);
+            color: white;
+        }
+
+        .copy-all-btn {
+            background-color: var(--dark);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .copy-all-btn:hover {
+            background-color: #0f172a;
+        }
+
+        /* Hashtags Section */
+        .hashtags-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .hashtag-tab {
+            padding: 12px 25px;
+            background-color: var(--light);
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .hashtag-tab.youtube {
+            color: var(--youtube);
+        }
+
+        .hashtag-tab.facebook {
+            color: var(--facebook);
+        }
+
+        .hashtag-tab.instagram {
+            color: var(--instagram);
+        }
+
+        .hashtag-tab.general {
+            color: var(--dark);
+        }
+
+        .hashtag-tab.active {
+            background-color: #1e293b;
+            color: white;
+            border-color: #1e293b;
+        }
+
+        .hashtag-tab.youtube.active {
+            background-color: var(--youtube);
+            border-color: var(--youtube);
+        }
+
+        .hashtag-tab.facebook.active {
+            background-color: var(--facebook);
+            border-color: var(--facebook);
+        }
+
+        .hashtag-tab.instagram.active {
+            background-color: var(--instagram);
+            border-color: var(--instagram);
+        }
+
+        .hashtags-content {
+            display: none;
+            flex-wrap: wrap;
+            gap: 12px;
+            min-height: 150px;
+        }
+
+        .hashtags-content.active {
+            display: flex;
+        }
+
+        .hashtag-item {
+            padding: 10px 18px;
+            background-color: #f1f5f9;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .hashtag-item:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Vehicles Section */
+        .vehicles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .vehicle-card {
+            background-color: var(--light);
+            border-radius: 10px;
+            padding: 25px;
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s;
+        }
+
+        .vehicle-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .vehicle-card h3 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .vehicle-card h3 i {
+            color: var(--primary);
+        }
+
+        .vehicle-card ul {
+            list-style-type: none;
+            margin-top: 15px;
+        }
+
+        .vehicle-card li {
+            padding: 5px 0;
+            color: var(--gray);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .vehicle-card li:before {
+            content: "•";
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Quick Notes Section */
+        .notes-section {
+            background-color: #fff7ed;
+            border-left-color: #f97316;
+        }
+
+        .notes-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .note-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .note-card h4 {
+            color: #ea580c;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--gray);
+            font-size: 0.9rem;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            .tools-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hashtags-tabs {
+                flex-direction: column;
+            }
+            
+            .hashtag-tab {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1><i class="fas fa-tools"></i> Auto Shop SEO & Marketing Guide</h1>
+        <p>Personal reference for keywords, hashtags, and tools for vehicle modification business in Pakistan</p>
+    </div>
+
+    <!-- SEO Tools Section -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-search"></i>
+            <h2>SEO & Marketing Tools</h2>
+        </div>
+        
+        <div class="tools-grid">
+            <!-- Keyword Research Tools -->
+            <div class="tool-card">
+                <h3><i class="fas fa-key"></i> Keyword Research</h3>
+                <p>Find the best keywords for auto shop SEO strategy</p>
+                <a href="https://hsuper.tools/" class="tool-link" target="_blank">H-Super Tools</a> &nbsp;
+                <a href="https://ads.google.com/home/tools/keyword-planner/" class="tool-link" target="_blank">Keyword Planner</a> &nbsp;
+                <a href="https://keywordintent.io/" class="tool-link" target="_blank">KeywordIntent.io</a>
+            </div>
+            
+            <!-- Analytics & Monitoring -->
+            <div class="tool-card">
+                <h3><i class="fas fa-chart-line"></i> Analytics & Monitoring</h3>
+                <p>Track performance, traffic, and user behavior</p>
+                <a href="https://search.google.com/search-console/" class="tool-link" target="_blank">Search Console</a> &nbsp;
+                <a href="https://analytics.google.com/" class="tool-link" target="_blank">Google Analytics</a>
+            </div>
+            
+            <!-- Performance Tools -->
+            <div class="tool-card">
+                <h3><i class="fas fa-tachometer-alt"></i> Performance Tools</h3>
+                <p>Test and optimize website speed and performance</p>
+                <a href="https://pagespeed.web.dev/" class="tool-link" target="_blank">PageSpeed Insights</a> &nbsp;
+                <a href="https://gtmetrix.com/" class="tool-link" target="_blank">GTmetrix</a>
+            </div>
+            
+            <!-- SEO Audit Tools -->
+            <div class="tool-card">
+                <h3><i class="fas fa-clipboard-check"></i> SEO Audit Tools</h3>
+                <p>Check technical SEO, backlinks, and site issues</p>
+                <a href="https://ahrefs.com/free-seo-tools" class="tool-link" target="_blank">Ahrefs Free Tools</a> &nbsp;
+                <a href="https://www.screamingfrog.co.uk/seo-spider/" class="tool-link" target="_blank">Screaming Frog</a> &nbsp;
+                <a href="https://www.siteliner.com/" class="tool-link" target="_blank">Siteliner</a>
+            </div>
+            
+            <!-- Chrome Extensions -->
+            <div class="tool-card">
+                <h3><i class="fab fa-chrome"></i> Chrome SEO Extensions</h3>
+                <p>Browser tools for quick SEO analysis</p>
+                <a href="https://chromewebstore.google.com/detail/seoquake/akdgnmcogleenhbclghghlkkdndkjdjc?hl=en" class="tool-link" target="_blank">SEOquake</a> &nbsp;
+                <a href="https://chromewebstore.google.com/detail/seo-pro-extension/lajfdngpocmchpihjecojjllfjeehgnl" class="tool-link" target="_blank">SEO Pro</a> &nbsp;
+                <a href="https://chrome.google.com/webstore/detail/keyword-surfer/" class="tool-link" target="_blank">Keyword Surfer</a>
+            </div>
+            
+            <!-- Content & Rank Tools -->
+            <div class="tool-card">
+                <h3><i class="fas fa-edit"></i> Content & Rank Tools</h3>
+                <p>Content ideas, rank tracking, and competitor analysis</p>
+                <a href="https://answerthepublic.com/" class="tool-link" target="_blank">AnswerThePublic</a> &nbsp;
+                <a href="https://neilpatel.com/ubersuggest/" class="tool-link" target="_blank">Ubersuggest</a> &nbsp;
+                <a href="https://www.serprobot.com/serp-check/" class="tool-link" target="_blank">SERPRobot</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keywords Section -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-tags"></i>
+            <h2>Auto Shop Keywords</h2>
+        </div>
+        
+        <div class="keywords-container" id="keywords-container">
+            <!-- Keywords will be populated by JavaScript -->
+        </div>
+        
+        <button class="copy-all-btn" id="copy-all-keywords">
+            <i class="fas fa-copy"></i> Copy All Keywords
+        </button>
+    </div>
+
+    <!-- Hashtags Section -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-hashtag"></i>
+            <h2>Social Media Hashtags</h2>
+        </div>
+        
+        <div class="hashtags-tabs">
+            <button class="hashtag-tab youtube active" data-target="youtube">
+                <i class="fab fa-youtube"></i> YouTube
+            </button>
+            <button class="hashtag-tab facebook" data-target="facebook">
+                <i class="fab fa-facebook"></i> Facebook
+            </button>
+            <button class="hashtag-tab instagram" data-target="instagram">
+                <i class="fab fa-instagram"></i> Instagram
+            </button>
+            <button class="hashtag-tab general" data-target="general">
+                <i class="fas fa-hashtag"></i> General Auto
+            </button>
+        </div>
+        
+        <div class="hashtags-content active" id="youtube-hashtags">
+            <!-- YouTube hashtags will be populated by JavaScript -->
+        </div>
+        
+        <div class="hashtags-content" id="facebook-hashtags">
+            <!-- Facebook hashtags will be populated by JavaScript -->
+        </div>
+        
+        <div class="hashtags-content" id="instagram-hashtags">
+            <!-- Instagram hashtags will be populated by JavaScript -->
+        </div>
+        
+        <div class="hashtags-content" id="general-hashtags">
+            <!-- General hashtags will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Vehicles Section -->
+    <div class="section">
+        <div class="section-title">
+            <i class="fas fa-car"></i>
+            <h2>Popular Vehicles in Pakistan</h2>
+        </div>
+        
+        <div class="vehicles-grid">
+            <div class="vehicle-card">
+                <h3><i class="fas fa-truck-pickup"></i> Toyota FJ Cruiser</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Dashboard upgrades</li>
+                    <li>Suspension modifications</li>
+                    <li>Interior upgrades</li>
+                    <li>Metal tech bumpers</li>
+                    <li>Icon suspension</li>
+                    <li>Facelifts</li>
+                </ul>
+            </div>
+            
+            <div class="vehicle-card">
+                <h3><i class="fas fa-car"></i> Toyota Corolla</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Facelift kits</li>
+                    <li>Interior modifications</li>
+                    <li>Body kits</li>
+                    <li>Suspension upgrades</li>
+                    <li>Lighting modifications</li>
+                </ul>
+            </div>
+            
+            <div class="vehicle-card">
+                <h3><i class="fas fa-truck"></i> Land Cruiser</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Full modifications</li>
+                    <li>Suspension lifts</li>
+                    <li>Interior luxury upgrades</li>
+                    <li>Exterior enhancements</li>
+                    <li>Off-road modifications</li>
+                </ul>
+            </div>
+            
+            <div class="vehicle-card">
+                <h3><i class="fas fa-car-side"></i> Honda Civic</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Body kits</li>
+                    <li>Performance upgrades</li>
+                    <li>Interior modifications</li>
+                    <li>Suspension enhancements</li>
+                    <li>Exhaust systems</li>
+                </ul>
+            </div>
+            
+            <div class="vehicle-card">
+                <h3><i class="fas fa-car-alt"></i> BMW Series</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Luxury modifications</li>
+                    <li>Performance tuning</li>
+                    <li>Body kits</li>
+                    <li>Interior upgrades</li>
+                    <li>Suspension work</li>
+                </ul>
+            </div>
+            
+            <div class="vehicle-card">
+                <h3><i class="fas fa-shuttle-van"></i> Suzuki & Others</h3>
+                <p>Most common modification requests:</p>
+                <ul>
+                    <li>Interior modifications</li>
+                    <li>Exterior enhancements</li>
+                    <li>Suspension upgrades</li>
+                    <li>Performance modifications</li>
+                    <li>Custom paint jobs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Notes Section -->
+    <div class="section notes-section">
+        <div class="section-title">
+            <i class="fas fa-sticky-note"></i>
+            <h2>Quick SEO Notes</h2>
+        </div>
+        
+        <div class="notes-container">
+            <div class="note-card">
+                <h4><i class="fas fa-key"></i> Short-Tail vs Long-Tail Keywords</h4>
+                <p><strong>Short-Tail:</strong> 1-2 words, high competition (e.g., "car modification")</p>
+                <p><strong>Long-Tail:</strong> 3+ words, better conversion (e.g., "fj cruiser dashboard upgrade Pakistan")</p>
+                <p><em>Focus on long-tail with vehicle model + service + location</em></p>
+            </div>
+            
+            <div class="note-card">
+                <h4><i class="fas fa-hashtag"></i> Hashtag Strategy</h4>
+                <p><strong>YouTube:</strong> 3-5 relevant hashtags in description</p>
+                <p><strong>Facebook/Instagram:</strong> 5-10 hashtags per post</p>
+                <p><strong>Mix:</strong> Broad + specific + location + branded hashtags</p>
+                <p><em>Research trending auto modification hashtags regularly</em></p>
+            </div>
+            
+            <div class="note-card">
+                <h4><i class="fas fa-tools"></i> Essential Tools</h4>
+                <p><strong>Must Use:</strong> Google Keyword Planner, Search Console, Analytics</p>
+                <p><strong>For Competition:</strong> Ahrefs, Ubersuggest</p>
+                <p><strong>For Technical:</strong> Screaming Frog, PageSpeed Insights</p>
+                <p><em>Check tools weekly for updates</em></p>
+            </div>
+            
+            <div class="note-card">
+                <h4><i class="fas fa-map-marker-alt"></i> Local SEO Focus</h4>
+                <p><strong>Location Keywords:</strong> "auto shop Lahore", "car modification Karachi"</p>
+                <p><strong>Google My Business:</strong> Optimize completely, add photos</p>
+                <p><strong>Local Listings:</strong> Ensure NAP consistency across directories</p>
+                <p><em>Create location-specific pages if serving multiple cities</em></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Auto Shop SEO & Marketing Guide | Personal Reference Tool</p>
+    </div>
+
+    <script>
+        // Keywords Data
+        const keywords = [
+            "fj cruiser dashboard upgrade",
+            "fj cruiser interior upgrades",
+            "interior modifications",
+            "interior mod",
+            "fj cruiser metal tech bumper",
+            "toyota fj cruiser suspension upgrade",
+            "fj cruiser icon suspension",
+            "best wheels for fj cruiser",
+            "fj cruiser facelift",
+            "gauge cluster",
+            "car modification",
+            "Face up lift vehicle in Pakistan",
+            "Face up lift vehicle price in Pakistan",
+            "Face up lift vehicle Price",
+            "Face up lift vehicle cost in Pakistan",
+            "Face up lift vehicle Lahore",
+            "Corolla Facelift kit price in Pakistan",
+            "car mod shops",
+            "car mod shops near me",
+            "car modification",
+            "corolla modification",
+            "bmw modification",
+            "modify cars",
+            "honda modification",
+            "car service",
+            "wheel alignment",
+            "auto shop",
+            "bumper repair",
+            "Car Detailing",
+            "car accessories",
+            "car wrapping",
+            "car detailing near me",
+            "car sun shade",
+            "waterproof car cover",
+            "car interior cleaning",
+            "leather seat covers",
+            "car seat cushion",
+            "car floor liners",
+            "land cruiser modification",
+            "fj cruiser"
+        ];
+
+        // Hashtags Data (deduplicated)
+        const youtubeHashtags = [
+            "#FJCruiser", "#CarModification", "#FJCruiserSuspensionUpgrade", "#AutoDetailing", 
+            "#CarWrapping", "#VehicleModification", "#ToyotaModification", "#OffroadBuild", 
+            "#CarRestoration", "#PakistanAutoShop", "#CarModsPakistan", "#FJCruiserBuild",
+            "#CarMod", "#AutoShop", "#CarUpgrade", "#VehicleCustomization", "#CarLovers"
+        ];
+
+        const facebookHashtags = [
+            "#FaceUpliftVehicle", "#FaceliftPricePakistan", "#CarModsLahore", "#CarModShopsPakistan", 
+            "#AutoShop", "#CarServicePakistan", "#CarDetailingPakistan", "#VehicleFacelift", 
+            "#CarModificationKarachi", "#TheCarGuysPK", "#SehgalMotors", "#CarAccessoriesPakistan",
+            "#CarCommunityPK", "#AutoModification", "#CarCulturePakistan", "#PakistaniCars"
+        ];
+
+        const instagramHashtags = [
+            "#CarDetailing", "#DetailingWorld", "#PaintProtectionFilm", "#CarbonFiber", 
+            "#LeatherSeatCovers", "#CarFloorLiners", "#MemoryFoamCushion", "#WaterproofCarCover", 
+            "#CarInterior", "#CarStyling", "#CarModification", "#AutoModification", 
+            "#CarMod", "#CarLifestyle", "#CarEnthusiast", "#CarGoals", "#CarPhotography",
+            "#InstaCar", "#CarGram", "#ModifiedCars", "#CarSpotting"
+        ];
+
+        const generalHashtags = [
+            "#IconVehicleDynamics", "#Bilstein6112", "#FJCruiserLiftKit", "#OMEsuspension", 
+            "#UpperControlArms", "#FJCruiserBumper", "#DemelloOffroad", "#RockSliders", 
+            "#FJCruiserOverlanding", "#FJRockCrawling", "#FJCruiserInteriorUpgrade", 
+            "#DasaitaHeadUnit", "#AndroidAuto", "#FJCruiserTech", "#TacotunesAudio", 
+            "#GaugeClusterUpgrade", "#FJMetalTechBumper", "#FJCruiserWheels", "#CorollaFaceliftConversion", 
+            "#CorollaFaceliftKitPrice", "#CarFaceliftCost", "#CorollaAltisX", "#ToyotaFacelift", 
+            "#FaceUpliftPrice", "#AndroidPanelPakistan", "#CorollaLightsPrice", "#BMWModification", 
+            "#HondaModification", "#LandCruiserModification", "#BMWBodyKit", "#HondaCivicMod", 
+            "#CarBodyKits", "#WheelAlignment", "#BrakeRepair", "#BumperRepair", "#AutobodyRepairNearMe",
+            "#SuspensionUpgrade", "#CarMaintenance", "#AutoRepair", "#CustomCars"
+        ];
+
+        // Initialize Keywords
+        function initializeKeywords() {
+            const keywordsContainer = document.getElementById('keywords-container');
+            keywordsContainer.innerHTML = '';
+            
+            keywords.forEach(keyword => {
+                const keywordElement = document.createElement('div');
+                keywordElement.className = 'keyword-pill';
+                keywordElement.textContent = keyword;
+                keywordElement.addEventListener('click', function() {
+                    copyToClipboard(keyword, keywordElement);
+                });
+                keywordsContainer.appendChild(keywordElement);
+            });
+            
+            // Add copy all button functionality
+            document.getElementById('copy-all-keywords').addEventListener('click', function() {
+                const allKeywords = keywords.join(', ');
+                copyToClipboard(allKeywords, this);
+            });
+        }
+
+        // Initialize Hashtags
+        function initializeHashtags() {
+            // YouTube hashtags
+            const youtubeContainer = document.getElementById('youtube-hashtags');
+            youtubeHashtags.forEach(hashtag => {
+                const hashtagElement = document.createElement('div');
+                hashtagElement.className = 'hashtag-item';
+                hashtagElement.textContent = hashtag;
+                hashtagElement.addEventListener('click', function() {
+                    copyToClipboard(hashtag, hashtagElement);
+                });
+                youtubeContainer.appendChild(hashtagElement);
+            });
+            
+            // Facebook hashtags
+            const facebookContainer = document.getElementById('facebook-hashtags');
+            facebookHashtags.forEach(hashtag => {
+                const hashtagElement = document.createElement('div');
+                hashtagElement.className = 'hashtag-item';
+                hashtagElement.textContent = hashtag;
+                hashtagElement.addEventListener('click', function() {
+                    copyToClipboard(hashtag, hashtagElement);
+                });
+                facebookContainer.appendChild(hashtagElement);
+            });
+            
+            // Instagram hashtags
+            const instagramContainer = document.getElementById('instagram-hashtags');
+            instagramHashtags.forEach(hashtag => {
+                const hashtagElement = document.createElement('div');
+                hashtagElement.className = 'hashtag-item';
+                hashtagElement.textContent = hashtag;
+                hashtagElement.addEventListener('click', function() {
+                    copyToClipboard(hashtag, hashtagElement);
+                });
+                instagramContainer.appendChild(hashtagElement);
+            });
+            
+            // General hashtags
+            const generalContainer = document.getElementById('general-hashtags');
+            generalHashtags.forEach(hashtag => {
+                const hashtagElement = document.createElement('div');
+                hashtagElement.className = 'hashtag-item';
+                hashtagElement.textContent = hashtag;
+                hashtagElement.addEventListener('click', function() {
+                    copyToClipboard(hashtag, hashtagElement);
+                });
+                generalContainer.appendChild(hashtagElement);
+            });
+            
+            // Tab switching functionality
+            const tabs = document.querySelectorAll('.hashtag-tab');
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update active content
+                    document.querySelectorAll('.hashtags-content').forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    document.getElementById(`${target}-hashtags`).classList.add('active');
+                });
+            });
+        }
+
+        // Copy to clipboard function
+        function copyToClipboard(text, element) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Visual feedback
+                const originalText = element.textContent;
+                const originalBg = element.style.backgroundColor;
+                const originalColor = element.style.color;
+                
+                element.textContent = 'Copied!';
+                element.classList.add('copied');
+                
+                setTimeout(() => {
+                    element.textContent = originalText;
+                    element.classList.remove('copied');
+                    element.style.backgroundColor = originalBg;
+                    element.style.color = originalColor;
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+                alert('Failed to copy text. Please try again.');
+            });
+        }
+
+        // Make all tool links open in new tab
+        function initializeToolLinks() {
+            document.querySelectorAll('.tool-link').forEach(link => {
+                link.setAttribute('target', '_blank');
+            });
+        }
+
+        // Initialize everything when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeKeywords();
+            initializeHashtags();
+            initializeToolLinks();
+        });
+    </script>
+</body>
+</html>
